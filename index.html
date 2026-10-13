@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f5eb">
+  <title>Little Acre — Cozy Farm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">🌱</div>
+        <div>
+          <div class="brand-name">little <span>acre</span></div>
+          <div class="tagline">a little patch of happy</div>
+        </div>
+      </div>
+      <div class="top-right">
+        <div class="weather">☀️ <b>Sunny</b> <span style="color:#8a8a7e">· 22°C</span></div>
+        <div class="wallet">🪙 <span id="coins">120</span></div>
+        <div class="avatar" title="Your farmer">👩‍🌾</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="eyebrow">YOUR COZY CORNER OF THE WORLD</div>
+        <h1>Good morning, farmer! <span>🌼</span></h1>
+        <p>There’s always something lovely growing around here.</p>
+      </div>
+      <div class="day-pill">
+        📅 <span id="day">Day 1</span>
+        <span style="color:#aaa">·</span>
+        <span id="date">Spring 1</span>
+      </div>
+    </section>
+
+    <div class="layout">
+      <main class="maincol">
+        <section class="card farm-card">
+          <div class="section-head">
+            <div>
+              <div class="section-title">Your little garden</div>
+              <div class="section-sub">Plant a seed, give it time, watch it grow 🌿</div>
+            </div>
+            <button class="tiny-btn" id="waterAll">💧 Water all</button>
+          </div>
+          <div class="plot" id="plot"></div>
+          <div class="farm-footer">
+            <span>Garden beds <b id="bedCount">0 / 8</b></span>
+            <span>Garden health <span class="progress"><i></i></span></span>
+          </div>
+        </section>
+
+        <div class="lower">
+          <section class="card panel">
+            <div class="section-head">
+              <div>
+                <div class="section-title">Harvest basket</div>
+                <div class="section-sub">Fresh from your garden</div>
+              </div>
+              <span style="font-size:20px">🧺</span>
+            </div>
+            <div class="item-list" id="harvest"></div>
+          </section>
+
+          <section class="card panel livestock">
+            <div class="section-head">
+              <div>
+                <div class="section-title">Farm friends</div>
+                <div class="section-sub">Your happy little helpers</div>
+              </div>
+              <span style="font-size:20px">🐾</span>
+            </div>
+            <div class="item-list" id="animals"></div>
+          </section>
+        </div>
+      </main>
+
+      <aside class="sidebar">
+        <section class="card side-card">
+          <div class="side-head">
+            <h2>Market</h2>
+            <span style="font-size:19px">🏡</span>
+          </div>
+          <div class="shop-tabs">
+            <button class="active" data-tab="seeds">🌱 Seeds</button>
+            <button data-tab="animals">🐓 Animals</button>
+            <button data-tab="special">✨ Finds</button>
+          </div>
+          <div id="shop" class="shop-list"></div>
+        </section>
+
+        <section class="card side-card">
+          <div class="side-head">
+            <h2>Today’s little goal</h2>
+            <span>🌟</span>
+          </div>
+          <div class="quest">
+            <div class="quest-top">
+              <div class="quest-icon">🥕</div>
+              <div>
+                <div class="quest-title">A crunchy start</div>
+                <div class="quest-desc">Harvest 3 lovely crops</div>
+              </div>
+            </div>
+            <div class="quest-progress"><i id="questBar" style="width:0%"></i></div>
+            <div class="quest-bottom">
+              <span id="questCount">0 / 3 harvested</span>
+              <b>Reward: +35 🪙</b>
+            </div>
+          </div>
+        </section>
+
+        <section class="card log">
+          <div class="log-head">
+            <div class="side-head" style="margin:0">
+              <h2>Farm journal</h2><span>📖</span>
+            </div>
+          </div>
+          <div class="log-list" id="journal"></div>
+        </section>
+      </aside>
+    </div>
+
+    <div class="footer">Made with sunshine, soil & a little bit of magic ✨</div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <div class="modal-bg" id="modal">
+    <div class="modal">
+      <div class="modal-emoji" id="modalEmoji">🎉</div>
+      <h2 id="modalTitle">Lovely find!</h2>
+      <p id="modalText"></p>
+      <button id="modalClose">Back to the farm</button>
+    </div>
+  </div>
+
+  <script src="node.js"></script>
+</body>
+</html>
